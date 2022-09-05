@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="region">
+        <item>-</item>
+        <item>서울특별시</item>
+        <item>부산광역시</item>S
+        <item>대구광역시</item>
+        <item>인천광역시</item>
+        <item>광주광역시</item>
+        <item>대전광역시</item>
+        <item>울산광역시</item>
+        <item>세종특별자치시</item>
+        <item>경기도</item>
+        <item>강원도</item>
+        <item>충청북도</item>
+        <item>충청남도</item>
+        <item>전라북도</item>
+        <item>전라남도</item>
+        <item>경상북도</item>
+        <item>경상남도</item>
+        <item>제주특별자치도</item>
+    </string-array>
+
+    <string-array name="region_jeonbuk">
+        <item></item>
+        <item>군산시</item>
+        <item>임실군</item>
+        <item>순창군</item>
+        <item>완주군</item>
+        <item>무주군</item>
+        <item>고창군</item>
+        <item>김제시</item>
+        <item>남원시</item>
+        <item>장수군</item>
+        <item>익산시</item>
+        <item>진안군</item>
+        <item>정읍시</item>
+        <item>전주시</item>
+        <item>부안군</item>
+    </string-array>
+
+    <string-array name="region_kunsan">
+        <item></item>
+        <item>옥도면</item>
+        <item>미장동</item>
+        <item>나운1동</item>
+        <item>나운2동</item>
+        <item>나운3동</item>
+        <item>해망동</item>
+        <item>미룡동</item>
+        <item>금광동</item>
+        <item>옥산면</item>
+        <item>미원동</item>
+        <item>장재동</item>
+        <item>신영동</item>
+        <item>영동</item>
+        <item>중앙로1가</item>
+        <item>중앙로2가</item>
+        <item>중앙로3가</item>
+        <item>장미동</item>
+        <item>대명동</item>
+        <item>평화동</item>
+        <item>죽성동</item>
+        <item>월명동</item>
+
+    </string-array>
+
+    <string-array name="region_miryong_detail">
+        <item></item>
+        <item>미룡주공1단지</item>
+        <item>미룡주공2단지</item>
+        <item>미룡주공3단지</item>
+        <item>미룡베네스타</item>
+        <item>은파리젠시빌</item>
+        <item>군산대학교</item>
+        <item>미룡초등학교</item>
+        <item>미룡그린빌2단지</item>
+        <item>용문초등학교</item>
+        <item>금강중학교</item>
+        <item>은파롯데캐슬</item>
+
+
+    </string-array>
+
+</resources>
