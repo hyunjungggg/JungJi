@@ -46,6 +46,57 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="주문 번호"
+            android:textSize="15dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_recruitment"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DFDFDF"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주문 시간 "
+            android:textSize="15dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_orderTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DFDFDF"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="배달 지역 "
             android:textSize="15dp"
             android:textColor="@color/black"/>
@@ -89,46 +140,17 @@
         android:layout_height="1dp"
         android:background="#DFDFDF"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="25dp"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="주문 시간 "
-            android:textSize="15dp"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/tv_orderTime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#DFDFDF"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#DFDFDF"/>
 
     <Button
         android:id="@+id/bt_siteLink"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#888888" android:text="배달 사이트"/>
-
-    <Button
-        android:id="@+id/bt_kakaoLink"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#888888"
-        android:text="주문하기"/>
+        android:backgroundTint="#888888" android:text="참여하기"/>
 </LinearLayout>

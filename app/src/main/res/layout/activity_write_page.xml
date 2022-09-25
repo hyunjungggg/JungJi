@@ -1,10 +1,10 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListViewActivity">
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -16,38 +16,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055"/>
+        app:layout_constraintVertical_bias="0.055" />
 
-    <Button
-        android:id="@+id/writebutton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:backgroundTint="#888888"
-        android:text="글 올리기"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859"/>
-
-    <EditText
-        android:id="@+id/et_name2"
+    <!--    지역 선택-->
+    <TextView
+        android:id="@+id/region_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="전라북도 군산시 미원동"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+    <TextView
+        android:id="@+id/region"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상세 위치"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.209" />
+
+    <Spinner
+        android:id="@+id/sp_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/region_miryong_detail"
         android:ems="10"
-        android:hint="name"
+        android:hint="location"
         android:inputType="textPersonName"
         android:textColor="#6D000000"
-        app:layout_constraintBottom_toBottomOf="@+id/name"
-        app:layout_constraintEnd_toEndOf="@+id/et_location"
-        app:layout_constraintHorizontal_bias="0.701"
-        app:layout_constraintStart_toStartOf="@+id/et_location"
-        app:layout_constraintTop_toTopOf="@+id/name"
-        app:layout_constraintVertical_bias="0.388"/>
+        app:layout_constraintBottom_toBottomOf="@+id/region"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/region"
+        app:layout_constraintTop_toTopOf="@+id/region">
 
+    </Spinner>
+
+    <!--    매장명-->
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -61,8 +76,24 @@
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="@+id/region"
         app:layout_constraintTop_toBottomOf="@+id/region"
-        app:layout_constraintVertical_bias="0.1"/>
+        app:layout_constraintVertical_bias="0.1" />
 
+    <EditText
+        android:id="@+id/et_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="name"
+        android:inputType="textPersonName"
+        android:textColor="#6D000000"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="@+id/sp_location"
+        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintStart_toStartOf="@+id/sp_location"
+        app:layout_constraintTop_toTopOf="@+id/name"
+        app:layout_constraintVertical_bias="0.388" />
+
+    <!--주문 시간-->
     <TextView
         android:id="@+id/time"
         android:layout_width="wrap_content"
@@ -76,35 +107,22 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/name"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449"/>
+        app:layout_constraintVertical_bias="0.449" />
 
-    <EditText
-        android:id="@+id/et_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10" android:hint="time"
-        android:inputType="textPersonName"
-        android:textColor="#6D000000"
-        app:layout_constraintBottom_toBottomOf="@+id/time"
+    <!--    배달 사이트-->
+    <TimePicker
+        android:id="@+id/tp_order_time"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        android:inputType="numberDecimal"
+        android:timePickerMode="spinner"
+
+        app:layout_constraintBottom_toTopOf="@+id/et_link"
         app:layout_constraintEnd_toEndOf="@+id/et_name2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="@+id/et_name2"
-        app:layout_constraintTop_toTopOf="@+id/time"/>
-
-    <EditText
-        android:id="@+id/et_link"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="link"
-        android:inputType="textPersonName"
-        android:textColor="#6D000000"
-        app:layout_constraintBottom_toBottomOf="@+id/link"
-        app:layout_constraintEnd_toEndOf="@+id/et_time"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_time"
-        app:layout_constraintTop_toTopOf="@+id/link"
-        app:layout_constraintVertical_bias="0.444"/>
+        app:layout_constraintTop_toTopOf="@+id/time"
+        app:layout_constraintVertical_bias="2" />
 
     <TextView
         android:id="@+id/link"
@@ -119,22 +137,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/time"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573"/>
+        app:layout_constraintVertical_bias="0.573" />
 
     <EditText
-        android:id="@+id/et_link2"
+        android:id="@+id/et_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="link"
         android:inputType="textPersonName"
         android:textColor="#6D000000"
-        app:layout_constraintBottom_toBottomOf="@+id/link2"
-        app:layout_constraintEnd_toEndOf="@+id/et_link"
+        app:layout_constraintBottom_toBottomOf="@+id/link"
+        app:layout_constraintEnd_toEndOf="@+id/tp_order_time"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_link"
-        app:layout_constraintTop_toTopOf="@+id/link2"/>
+        app:layout_constraintStart_toStartOf="@+id/tp_order_time"
+        app:layout_constraintTop_toTopOf="@+id/link"
+        app:layout_constraintVertical_bias="0.444" />
 
+    <!--오픈 채팅방-->
     <TextView
         android:id="@+id/link2"
         android:layout_width="wrap_content"
@@ -148,33 +168,37 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/link"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705"/>
-
-    <TextView
-        android:id="@+id/region"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="지역 선택"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209"/>
+        app:layout_constraintVertical_bias="0.705" />
 
     <EditText
-        android:id="@+id/et_location"
+        android:id="@+id/et_link2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="location"
-        android:textColor="#6D000000"
+        android:hint="link"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/region"
+        android:textColor="#6D000000"
+        app:layout_constraintBottom_toBottomOf="@+id/link2"
+        app:layout_constraintEnd_toEndOf="@+id/et_link"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_link"
+        app:layout_constraintTop_toTopOf="@+id/link2" />
+
+    <!--글 올리기ㅣ-->
+    <Button
+        android:id="@+id/writebutton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:backgroundTint="#888888"
+        android:text="글 올리기"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/region"
-        app:layout_constraintTop_toTopOf="@+id/region"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

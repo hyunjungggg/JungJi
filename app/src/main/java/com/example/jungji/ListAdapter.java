@@ -5,30 +5,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.jungji.data.model.RecruitmentItem;
 
 import java.util.ArrayList;
 
 public class ListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
-    private ArrayList<Item> data;
+    private ArrayList<RecruitmentItem> recruitmentItemsList;
     private int layout;
 
-    public ListAdapter(Context context, int layout, ArrayList<Item> data) {
+    public ListAdapter(Context context, int layout) {
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.data = data;
+        this.recruitmentItemsList = new ArrayList<>();
         this.layout = layout;
     }
 
     @Override
     public int getCount() {
-        return data.size();
+        return recruitmentItemsList.size();
     }
 
     @Override
-    public String getItem(int position) {
-        return data.get(position).getLocation();
+    public RecruitmentItem getItem(int position) {
+        return recruitmentItemsList.get(position);
     }
 
     @Override
@@ -41,18 +42,26 @@ public class ListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(layout, parent, false);
         }
-        Item friendsItem = data.get(position);
+        RecruitmentItem friendsRecruitmentItem = recruitmentItemsList.get(position);
+
+        TextView id = (TextView) convertView.findViewById(R.id.tv_id);
+        id.setText(friendsRecruitmentItem.getId());
 
         TextView location = (TextView) convertView.findViewById(R.id.tv_location);
-        location.setText(friendsItem.getLocation());
+        location.setText(friendsRecruitmentItem.getLocation());
 
         TextView storeName = (TextView) convertView.findViewById(R.id.tv_storeName);
-        storeName.setText(friendsItem.getStoreName());
+        storeName.setText(friendsRecruitmentItem.getStoreName());
 
         TextView orderTime = (TextView) convertView.findViewById(R.id.tv_orderTime);
-        orderTime.setText(friendsItem.getOrderTime());
+        orderTime.setText(friendsRecruitmentItem.getOrderTime());
 
 
         return convertView;
+    }
+
+    // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
+    public void addItem(RecruitmentItem item) {
+        recruitmentItemsList.add(item);
     }
 }

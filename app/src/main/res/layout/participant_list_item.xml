@@ -1,0 +1,53 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="60"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tv_user_id"
+                android:layout_width="10dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="30"
+                android:background="#959595"
+                android:gravity="center"
+                android:text="아이디"/>
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="50dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="30"
+                android:background="#959595"
+                android:gravity="center"
+                android:text="이름"/>
+
+            <TextView
+                android:id="@+id/tv_orderTime"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="40"
+                android:background="#DCD9D9"
+                android:gravity="center"
+                android:text="신청 시간"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
